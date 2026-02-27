@@ -1,15 +1,34 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
+import java.util.Scanner;
+public class InvertidoArray {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner sc = new Scanner(System.in);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        System.out.println("Indique la longitud:");
+        int longitud = sc.nextInt();
+        int[] primero = new int[longitud];
+        int[] invertido = new int[longitud];
+
+        longitud-=1;
+
+        for (int i = 0; i <= longitud; i++) {
+            System.out.println("Introduce el valor numero " + (i+1) + ":");
+            primero[i] = sc.nextInt();
+        }
+
+        for (int i = 0; i <= longitud; i++) {
+            invertido[longitud-i] = primero[i];
+        }
+
+        System.out.println("Array normal:");
+        for (int i = 0; i <= longitud; i++) {
+            System.out.print(primero[i] + " ");
+        }
+
+        System.out.println();
+
+        System.out.println("Array invertido:");
+        for (int i = 0; i <= longitud; i++) {
+            System.out.print(invertido[i] + " ");
         }
     }
 }
